@@ -15,6 +15,18 @@
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            500: '#0070f3',
+                            600: '#0062d1',
+                            950: '#021833',
+                        },
+                        accent: {
+                            teal: '#14b8a6',
+                            purple: '#8b5cf6',
+                        }
                     }
                 }
             }
@@ -27,6 +39,7 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.06);
         }
+        
         #appContainer {
             background-image: url('https://i.imgur.com/3MnEBgl.jpeg');
             background-size: cover;
@@ -51,16 +64,14 @@
         </header>
 
         <main class="flex-grow flex flex-col items-center justify-center px-6 relative z-10">
-            
             <div class="w-full max-w-xs glass rounded-3xl p-6 shadow-2xl backdrop-blur-md flex flex-col items-center gap-6">
-                
                 <div class="text-center">
                     <h1 class="text-lg font-extrabold text-white tracking-wide">Selamat Datang</h1>
                     <p class="text-[10px] text-slate-300 font-medium mt-1">Silakan pilih menu layanan di bawah ini</p>
                 </div>
 
                 <div class="grid grid-cols-3 gap-4 w-full">
-                    
+                    <!-- Tombol AOTM -->
                     <button class="flex flex-col items-center gap-2 group cursor-pointer active:scale-95 transition-transform duration-150">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xl shadow-lg shadow-cyan-500/10 group-hover:shadow-cyan-500/25 transition-all">
                             <i class="fa-solid fa-chart-simple"></i>
@@ -70,15 +81,17 @@
                         </span>
                     </button>
 
-                    <button class="flex flex-col items-center gap-2 group cursor-pointer active:scale-95 transition-transform duration-150">
+                    <!-- Tombol Market (Mengarahkan ke market.html) -->
+                    <a href="market.html" class="flex flex-col items-center gap-2 group cursor-pointer active:scale-95 transition-transform duration-150 text-center">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-400 to-teal-600 flex items-center justify-center text-white text-xl shadow-lg shadow-emerald-500/10 group-hover:shadow-emerald-500/25 transition-all">
                             <i class="fa-solid fa-store"></i>
                         </div>
                         <span class="text-[10px] font-extrabold text-slate-200 tracking-wider uppercase group-hover:text-emerald-400 transition-colors">
                             Market
                         </span>
-                    </button>
+                    </a>
 
+                    <!-- Tombol Gallery -->
                     <button class="flex flex-col items-center gap-2 group cursor-pointer active:scale-95 transition-transform duration-150">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-500 to-pink-600 flex items-center justify-center text-white text-xl shadow-lg shadow-purple-500/10 group-hover:shadow-purple-500/25 transition-all">
                             <i class="fa-solid fa-images"></i>
@@ -87,10 +100,8 @@
                             Gallery
                         </span>
                     </button>
-                    
                 </div>
             </div>
-
         </main>
 
         <footer class="p-6 text-center z-10">
