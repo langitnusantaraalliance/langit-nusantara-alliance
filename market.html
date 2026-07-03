@@ -54,6 +54,34 @@
             from { transform: translateY(100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
+        /* Menghilangkan latar belakang putih pada scrollbar dan membuatnya melayang tipis */
+        #appContainer *::-webkit-scrollbar {
+            width: 4px; /* Sangat tipis */
+            height: 4px;
+        }
+
+        #appContainer *::-webkit-scrollbar-track {
+            background: transparent; /* Menghilangkan background putih sepenuhnya */
+            margin-top: 16px; /* Memberi jarak dari atas agar terlihat lebih pendek */
+            margin-bottom: 16px; /* Memberi jarak dari bawah */
+        }
+
+        #appContainer *::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.25); /* Garis indikator semi-transparan */
+            border-radius: 99px; /* Bentuk kapsul melingkar */
+            transition: background 0.2s ease;
+        }
+
+        #appContainer *::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.45); /* Sedikit lebih terang saat diarahkan kursor */
+        }
+
+        /* Kompatibilitas untuk browser Firefox */
+        #appContainer * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased flex items-center justify-center">
@@ -209,6 +237,121 @@
                                         <div class="text-[9px] text-slate-400"><i class="fa-solid fa-users mr-1"></i> 186</div>
                                         <div class="text-[9px] text-slate-400"><i class="fa-solid fa-box-open mr-1"></i> Available: 0</div>
                                         <div class="text-[9px] text-emerald-400 font-bold"><i class="fa-solid fa-coins mr-1"></i> $84,800K</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- A321-100 -->
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800 hover:border-red-500/50 transition-all cursor-pointer glass">
+                            <div class="flex gap-4 items-center">
+                                <img src="https://i.imgur.com/nvjOO94.png" class="w-24 h-16 rounded-lg object-contain bg-white p-1" onerror="this.src='https://placehold.co/100x100/333/fff?text=A321'">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-sm">Airbus A321-100</h3>
+                                    <div class="grid grid-cols-2 gap-2 mt-2">
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-location-arrow mr-1"></i> 4,300 km</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-users mr-1"></i> 230</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-box-open mr-1"></i> Available: 0</div>
+                                        <div class="text-[9px] text-emerald-400 font-bold"><i class="fa-solid fa-coins mr-1"></i> $87,700K</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- A321-200 -->
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800 hover:border-red-500/50 transition-all cursor-pointer glass">
+                            <div class="flex gap-4 items-center">
+                                <img src="https://i.imgur.com/nvjOO94.png" class="w-24 h-16 rounded-lg object-contain bg-white p-1" onerror="this.src='https://placehold.co/100x100/333/fff?text=A321'">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-sm">Airbus A321-200</h3>
+                                    <div class="grid grid-cols-2 gap-2 mt-2">
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-location-arrow mr-1"></i> 5,950 km</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-users mr-1"></i> 230</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-box-open mr-1"></i> Available: 0</div>
+                                        <div class="text-[9px] text-emerald-400 font-bold"><i class="fa-solid fa-coins mr-1"></i> $90,640K</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Airbus A320neo Family -->
+                <div class="space-y-2">
+                    <button onclick="toggleGroup('a320neo')" class="w-full bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex justify-between items-center group glass">
+                        <span class="font-bold text-sm tracking-wide">Airbus A320neo Family</span>
+                        <i class="fa-solid fa-chevron-down text-slate-500 group-hover:text-white transition-colors"></i>
+                    </button>
+                    <div id="a320neo" class="space-y-3 hidden">
+                        <!-- A319neo -->
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800 hover:border-red-500/50 transition-all cursor-pointer glass">
+                            <div class="flex gap-4 items-center">
+                                <img src="https://i.imgur.com/se43yl5.png" class="w-24 h-16 rounded-lg object-contain bg-white p-1" onerror="this.src='https://placehold.co/100x100/333/fff?text=A19N'">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-sm">Airbus A319neo</h3>
+                                    <div class="grid grid-cols-2 gap-2 mt-2">
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-location-arrow mr-1"></i> 6,850 km</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-users mr-1"></i> 160</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-box-open mr-1"></i> Available: 0</div>
+                                        <div class="text-[9px] text-emerald-400 font-bold"><i class="fa-solid fa-coins mr-1"></i> $85,200K</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- A320neo -->
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800 hover:border-red-500/50 transition-all cursor-pointer glass">
+                            <div class="flex gap-4 items-center">
+                                <img src="https://i.imgur.com/6lI83cd.png" class="w-24 h-16 rounded-lg object-contain bg-white p-1" onerror="this.src='https://placehold.co/100x100/333/fff?text=A20N'">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-sm">Airbus A320neo</h3>
+                                    <div class="grid grid-cols-2 gap-2 mt-2">
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-location-arrow mr-1"></i> 6,300 km</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-users mr-1"></i> 194</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-box-open mr-1"></i> Available: 0</div>
+                                        <div class="text-[9px] text-emerald-400 font-bold"><i class="fa-solid fa-coins mr-1"></i> $91,480K</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- A321neo -->
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800 hover:border-red-500/50 transition-all cursor-pointer glass">
+                            <div class="flex gap-4 items-center">
+                                <img src="https://i.imgur.com/nvjOO94.png" class="w-24 h-16 rounded-lg object-contain bg-white p-1" onerror="this.src='https://placehold.co/100x100/333/fff?text=A21N'">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-sm">Airbus A321neo</h3>
+                                    <div class="grid grid-cols-2 gap-2 mt-2">
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-location-arrow mr-1"></i> 6,480 km</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-users mr-1"></i> 244</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-box-open mr-1"></i> Available: 0</div>
+                                        <div class="text-[9px] text-emerald-400 font-bold"><i class="fa-solid fa-coins mr-1"></i> $101,000K</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- A321LR -->
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800 hover:border-red-500/50 transition-all cursor-pointer glass">
+                            <div class="flex gap-4 items-center">
+                                <img src="https://i.imgur.com/nvjOO94.png" class="w-24 h-16 rounded-lg object-contain bg-white p-1" onerror="this.src='https://placehold.co/100x100/333/fff?text=A21N'">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-sm">Airbus A321LR</h3>
+                                    <div class="grid grid-cols-2 gap-2 mt-2">
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-location-arrow mr-1"></i> 7,400 km</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-users mr-1"></i> 244</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-box-open mr-1"></i> Available: 0</div>
+                                        <div class="text-[9px] text-emerald-400 font-bold"><i class="fa-solid fa-coins mr-1"></i> $106,000K</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- A321XLR -->
+                        <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-800 hover:border-red-500/50 transition-all cursor-pointer glass">
+                            <div class="flex gap-4 items-center">
+                                <img src="https://i.imgur.com/nvjOO94.png" class="w-24 h-16 rounded-lg object-contain bg-white p-1" onerror="this.src='https://placehold.co/100x100/333/fff?text=A21N'">
+                                <div class="flex-grow">
+                                    <h3 class="font-bold text-sm">Airbus A321XLR</h3>
+                                    <div class="grid grid-cols-2 gap-2 mt-2">
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-location-arrow mr-1"></i> 8,704 km</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-users mr-1"></i> 244</div>
+                                        <div class="text-[9px] text-slate-400"><i class="fa-solid fa-box-open mr-1"></i> Available: 0</div>
+                                        <div class="text-[9px] text-emerald-400 font-bold"><i class="fa-solid fa-coins mr-1"></i> $114,000K</div>
                                     </div>
                                 </div>
                             </div>
