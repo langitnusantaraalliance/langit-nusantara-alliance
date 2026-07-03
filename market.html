@@ -46,6 +46,14 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
+        .notification-toast {
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased flex items-center justify-center">
@@ -54,7 +62,6 @@
         
         <header class="p-6 flex justify-between items-center z-10">
             <div class="flex items-center gap-3">
-                <!-- Tombol Back untuk kembali ke index.html -->
                 <a href="index.html" class="text-white/80 hover:text-white mr-1 active:scale-90 transition-transform">
                     <i class="fa-solid fa-arrow-left text-lg"></i>
                 </a>
@@ -73,7 +80,7 @@
                 <div class="w-full space-y-3">
                     
                     <!-- Tombol Buy Fleet -->
-                    <button class="w-full relative overflow-hidden group p-4 rounded-xl bg-gradient-to-br from-slate-950/80 to-brand-950/40 border border-slate-800/80 hover:border-brand-500/40 text-left transition-all duration-300 shadow-lg active:scale-[0.98] block cursor-pointer">
+                    <button onclick="showToast('Fitur Buy Fleet sedang dalam pengembangan.')" class="w-full relative overflow-hidden group p-4 rounded-xl bg-gradient-to-br from-slate-950/80 to-brand-950/40 border border-slate-800/80 hover:border-brand-500/40 text-left transition-all duration-300 shadow-lg active:scale-[0.98] block cursor-pointer">
                         <div class="absolute -right-6 -bottom-6 w-16 h-16 bg-brand-500/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
                         
                         <div class="flex items-center gap-3">
@@ -89,8 +96,8 @@
                         </div>
                     </button>
 
-                    <!-- Tombol Sell Fleet -->
-                    <button class="w-full relative overflow-hidden group p-4 rounded-xl bg-gradient-to-br from-slate-950/80 to-accent-purple/20 border border-slate-800/80 hover:border-accent-purple/40 text-left transition-all duration-300 shadow-lg active:scale-[0.98] block cursor-pointer">
+                    <!-- Tombol Sell Fleet (Sekarang mengarah ke sell_fleet.html) -->
+                    <button onclick="window.location.href='fleet_market.html'" class="w-full relative overflow-hidden group p-4 rounded-xl bg-gradient-to-br from-slate-950/80 to-accent-purple/20 border border-slate-800/80 hover:border-accent-purple/40 text-left transition-all duration-300 shadow-lg active:scale-[0.98] block cursor-pointer">
                         <div class="absolute -right-6 -bottom-6 w-16 h-16 bg-accent-purple/10 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
                         
                         <div class="flex items-center gap-3">
@@ -117,7 +124,25 @@
             </p>
         </footer>
 
+        <!-- Toast Notification -->
+        <div id="toastContainer" class="absolute bottom-10 left-0 right-0 px-6 pointer-events-none z-50 flex justify-center">
+            <div id="toastContent" class="hidden bg-slate-800 border border-slate-700 text-white px-4 py-3 rounded-xl shadow-2xl text-xs font-medium">
+            </div>
+        </div>
     </div>
 
+    <script>
+        function showToast(message) {
+            const container = document.getElementById('toastContent');
+            container.innerText = message;
+            container.classList.remove('hidden');
+            container.classList.add('notification-toast');
+            
+            setTimeout(() => {
+                container.classList.add('hidden');
+                container.classList.remove('notification-toast');
+            }, 2500);
+        }
+    </script>
 </body>
 </html>
